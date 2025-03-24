@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 
 import ChildComponent1 from "../components/ChildComponent1";
@@ -9,23 +8,23 @@ const MainComponent = () => {
   const { globalState } = useAppContext();
   const { formState, handleSubmit, getValues } = useFormContext();
 
-  const onSubmit = (data) => {
+  const onSubmitSuccess = (data) => {
     console.log(globalState);
     console.log(getValues());
     console.log(formState.errors);
     console.log(data);
   };
 
-  const [message, setMessage] = useState("");
+  // form 안의 여러 오류들을 복합적으로 처리해야하는 경우 이곳에서 관리한다.
+  const onSubmitError = (data) => {
+    console.log(data);
+    console.log("에러처리 경우");
+  };
 
   const onSubmitWrapper = (e) => {
     e.preventDefault();
 
-    // form 안의 여러 오류들을 복합적으로 처리해야하는 경우 이곳에서 관리한다.
-    setMessage(formState.errors.toString());
-
-    // 실제 제출 함수 실행
-    handleSubmit(onSubmit)(e);
+    handleSubmit(onSubmitSuccess, onSubmitError)(e);
   };
 
   return (
@@ -33,7 +32,6 @@ const MainComponent = () => {
       <ChildComponent1 />
       <ChildComponent2 />
       <button type="submit">제출</button>
-      {message && <p>{message}</p>}
     </form>
   );
 };
