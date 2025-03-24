@@ -1,0 +1,11 @@
+{
+  "name": "@hook-form-test/form",
+  "version": "0.0.0",
+  "main": "index.js",
+  "type": "module",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.0.0"
+  }
+}

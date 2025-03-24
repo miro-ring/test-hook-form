@@ -1,0 +1,12 @@
+{
+  "name": "hook-form-test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --filter front dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
