@@ -4,7 +4,6 @@ import { useFormContext } from "react-hook-form";
 import ChildComponent1 from "../components/ChildComponent1";
 import ChildComponent2 from "../components/ChildComponent2";
 import MainFormProvider, { useAppContext } from "./provider";
-import { REGISTER_NAME } from "../components/registerName";
 
 const MainComponent = () => {
   const { globalState } = useAppContext();
@@ -46,7 +45,3 @@ export default function Main() {
     </MainFormProvider>
   );
 }
-
-// https://react-hook-form.com/advanced-usage#SmartFormComponent
-// 이 방식의 문제는 depth가 깊어진 자식 노드에는 적용이 안 된다는 점.
-// 재귀로 처리해볼 수 있지 않을까? 성능면에서 문제가 될까

@@ -7,7 +7,7 @@ const ChildComponent2 = () => {
   const registerName = REGISTER_NAME.secondChild;
 
   // 이 컴포넌트만의 기본값과 유효성 검사 규칙
-  const defaultValue = "기본값1";
+  const defaultValue = "기본값2";
   const validation = {
     required: `${registerName} 이 필드는 필수입니다`,
     minLength: {
